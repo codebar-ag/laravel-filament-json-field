@@ -1,9 +1,10 @@
-<img src="https://banners.beyondco.de/Filament%20Json%20Field.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Ffilament-json-field&pattern=circuitBoard&style=style_2&description=A+Laravel+Filament+Json+Field+integration.&md=1&showWatermark=1&fontSize=150px&images=home&widths=500&heights=500">
+<img src="https://banners.beyondco.de/Laravel%20Filament%20Json%20Field.png?theme=light&packageManager=composer+require&packageName=codebar-ag%2Flaravel-filament-json-field&pattern=circuitBoard&style=style_1&description=A+Laravel+Filament+Json+Field+integration.&md=1&showWatermark=1&fontSize=100px&images=light-bulb">
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/filament-json-field.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/filament-json-field)
-[![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/filament-json-field.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/filament-json-field)
-[![run-tests](https://github.com/codebar-ag/filament-json-field/actions/workflows/run-tests.yml/badge.svg)](https://github.com/codebar-ag/filament-json-field/actions/workflows/run-tests.yml)
-[![PHPStan](https://github.com/codebar-ag/filament-json-field/actions/workflows/phpstan.yml/badge.svg)](https://github.com/codebar-ag/filament-json-field/actions/workflows/phpstan.yml)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/codebar-ag/laravel-filament-json-field.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-filament-json-field)
+[![GitHub-Tests](https://github.com/codebar-ag/laravel-filament-json-field/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-filament-json-field/actions/workflows/run-tests.yml)
+[![GitHub Code Style](https://github.com/codebar-ag/laravel-filament-json-field/actions/workflows/fix-php-code-style-issues.yml/badge.svg?branch=main)](https://github.com/codebar-ag/laravel-filament-json-field/actions/workflows/fix-php-code-style-issues.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/codebar-ag/laravel-filament-json-field.svg?style=flat-square)](https://packagist.org/packages/codebar-ag/laravel-filament-json-field)
+
 
 ## 💡 What is Filament Json Field?
 
@@ -11,9 +12,11 @@ Filament Json Field is a Filament wrapper for Codemirror.
 
 ## 🛠 Requirements
 
-| Package 	 | PHP 	 | Laravel 	     | Filament Infolists | Filament Support | Filament Tables |
-|-----------|-------|---------------|--------------------|------------------|-----------------|
-| v1.0      | ^8.1  | ^10.45, ^11.0 | ^3.2               | ^3.2             | ^3.2            |
+| Package 	 | PHP 	            | Laravel 	     | Filament Infolists | Filament Support | Filament Tables |
+|-----------|------------------|---------------|--------------------|------------------|-----------------|
+| v12.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^3.3               | ^3.3             | ^3.3            |
+| v11.0     | ^8.1             | ^10.45, ^11.0 | ^3.2               | ^3.2             | ^3.2            |
+| v1.0      | ^8.1             | ^10.45, ^11.0 | ^3.2               | ^3.2             | ^3.2            |
 
 
 ## ⚙️ Installation
