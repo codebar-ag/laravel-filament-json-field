@@ -1,8 +1,8 @@
 import * as esbuild from 'esbuild';
 
 esbuild.build({
-    entryPoints: ['./resources/js/filament-json-field.js'],
-    outfile: './dist/filament-json-field.js',
+    entryPoints: ['./resources/js/laravel-filament-json-field.js'],
+    outfile: './dist/laravel-filament-json-field.js',
     bundle: true,
     mainFields: ['module', 'main'],
     platform: 'browser',

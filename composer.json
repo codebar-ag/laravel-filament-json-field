@@ -1,12 +1,12 @@
 {
-    "name": "codebar-ag/filament-json-field",
-    "description": "This is my package filament-json-field",
+    "name": "codebar-ag/laravel-filament-json-field",
+    "description": "This is my package laravel-filament-json-field",
     "keywords": [
         "CodebarAg",
         "laravel",
-        "filament-json-field"
+        "laravel-filament-json-field"
     ],
-    "homepage": "https://github.com/codebar-ag/filament-json-field",
+    "homepage": "https://github.com/codebar-ag/laravel-filament-json-field",
     "license": "MIT",
     "authors": [
         {
@@ -56,7 +56,7 @@
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-filament-json-field --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-filament-json-field --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
