@@ -19,7 +19,7 @@ class JsonInput extends Field
     use HasLineNumbers;
     use HasLineWrapping;
 
-    protected string $view = 'laravel-filament-json-field::forms.components.json-input';
+    protected string $view = 'filament-json-field::forms.components.json-input';
 
     public function setUp(): void
     {
