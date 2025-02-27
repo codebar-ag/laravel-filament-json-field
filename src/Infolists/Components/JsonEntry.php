@@ -17,6 +17,5 @@ class JsonEntry extends Entry
     use HasLineNumbers;
     use HasLineWrapping;
 
-    // @phpstan-ignore-next-line
-    protected string $view = 'laravel-filament-json-field::infolists.components.json-entry';
+    protected string $view = 'filament-json-field::infolists.components.json-entry';
 }
