@@ -2,7 +2,6 @@
 
 namespace CodebarAg\FilamentJsonField;
 
-use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
