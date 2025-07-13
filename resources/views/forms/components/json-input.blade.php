@@ -1,7 +1,6 @@
 <x-dynamic-component
     :component="$getFieldWrapperView()"
     :field="$field"
-
 >
     <div
         x-data="{ state: $wire.{{ $applyStateBindingModifiers("\$entangle('{$getStatePath()}')") }} }"
@@ -11,7 +10,7 @@
         <div
             wire:ignore
             x-init="
-                {{ str_replace('.', '', $getId()) }} = CodeMirror($refs.{{ str_replace('.', '', $getId()) }}, {
+                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }} = CodeMirror($refs.{{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}, {
                     mode: 'application/json',
                     lineNumbers: {{ json_encode($getHasLineNumbers()) }},
                     lineWrapping: {{ json_encode($getHasLineWrapping()) }},
@@ -34,13 +33,13 @@
 
                             // Get open / close token
                             var startToken = '{', endToken = '}';
-                            var prevLine = {{ str_replace('.', '', $getId()) }}.getLine(from.line);
+                            var prevLine = {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getLine(from.line);
                             if (prevLine.lastIndexOf('[') > prevLine.lastIndexOf('{')) {
                                 startToken = '[', endToken = ']';
                             }
 
                             // Get json content
-                            var internal = {{ str_replace('.', '', $getId()) }}.getRange(from, to);
+                            var internal = {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getRange(from, to);
                             var toParse = startToken + internal + endToken;
 
                             // Get key count
@@ -54,31 +53,31 @@
                     }
                 });
 
-                {{ str_replace('.', '', $getId()) }}.setSize('100%', '100%');
-                {{ str_replace('.', '', $getId()) }}.setValue({{ json_encode(json_encode($getState(), JSON_PRETTY_PRINT), JSON_UNESCAPED_SLASHES) }} ?? '{}');
+                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.setSize('100%', '100%');
+                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.setValue({{ json_encode(json_encode($getState(), JSON_PRETTY_PRINT), JSON_UNESCAPED_SLASHES) }} ?? '{}');
 
                 @php
                     if($getHasFoldedCode()) {
-                        echo str_replace('.', '', $getId()) . ".foldCode(CodeMirror.Pos(0, 0));";
+                        echo preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) . ".foldCode(CodeMirror.Pos(0, 0));";
                     }
                 @endphp
 
                 setTimeout(function() {
-                        {{ str_replace('.', '', $getId()) }}.refresh();
+                        {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.refresh();
                 }, 1);
 
-                {{ str_replace('.', '', $getId()) }}.on('change', function () {
+                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.on('change', function () {
                     try {
-                        state = JSON.parse({{ str_replace('.', '', $getId()) }}.getValue())
+                        state = JSON.parse({{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getValue())
                     } catch (e) {
-                        state = {{ str_replace('.', '', $getId()) }}.getValue();
+                        state = {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getValue();
                     }
                 });
             "
         >
             <div
                 wire:ignore
-                x-ref="{{ str_replace('.', '', $getId()) }}"
+                x-ref="{{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}"
             ></div>
         </div>
     </div>

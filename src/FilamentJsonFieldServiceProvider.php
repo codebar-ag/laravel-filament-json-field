@@ -17,10 +17,9 @@ class FilamentJsonFieldServiceProvider extends PackageServiceProvider
             ->hasViews();
     }
 
-    public function packageBooted()
+    public function packageBooted(): void
     {
         FilamentAsset::register([
-            Css::make('laravel-filament-json-field', __DIR__.'/../dist/laravel-filament-json-field.css'),
             Js::make('laravel-filament-json-field', __DIR__.'/../dist/laravel-filament-json-field.js'),
         ], 'laravel-filament-json-field');
     }

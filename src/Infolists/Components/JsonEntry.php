@@ -18,4 +18,9 @@ class JsonEntry extends Entry
     use HasLineWrapping;
 
     protected string $view = 'filament-json-field::infolists.components.json-entry';
+
+    public static function getAssetPackageName(): ?string
+    {
+        return 'laravel-filament-json-field';
+    }
 }
