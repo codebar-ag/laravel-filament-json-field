@@ -36,9 +36,4 @@ class JsonInput extends Field
                 'array' => __('The :attribute must be valid JSON.'),
             ]);
     }
-
-    public function getStatePath(bool $isAbsolute = true): ?string
-    {
-        return parent::getStatePath($isAbsolute);
-    }
 }
