@@ -11,12 +11,3 @@ await esbuild.build({
     target: ['es2020'],
     minify: true,
 });
-
-// Build CSS (if needed in the future)
-// await esbuild.build({
-//     entryPoints: ['./resources/css/laravel-filament-json-field.css'],
-//     outfile: './dist/laravel-filament-json-field.css',
-//     bundle: true,
-//     platform: 'browser',
-//     minify: true,
-// });

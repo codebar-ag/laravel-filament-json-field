@@ -2,6 +2,9 @@
     :component="$getEntryWrapperView()"
     :entry="$entry"
 >
+    @php
+        $cmId = preg_replace('/[^a-zA-Z0-9_]/', '_', $getId());
+    @endphp
     <div
         style="position: relative; border-radius: 0.375rem; overflow-x: scroll;"
         x-cloak
@@ -28,18 +31,15 @@
                         widget: (from, to) => {
                             var count = undefined;
 
-                            // Get open / close token
                             var startToken = '{', endToken = '}';
-                            var prevLine = {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getLine(from.line);
+                            var prevLine = {{ $cmId }}.getLine(from.line);
                             if (prevLine.lastIndexOf('[') > prevLine.lastIndexOf('{')) {
                                 startToken = '[', endToken = ']';
                             }
 
-                            // Get json content
-                            var internal = {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.getRange(from, to);
+                            var internal = {{ $cmId }}.getRange(from, to);
                             var toParse = startToken + internal + endToken;
 
-                            // Get key count
                             try {
                                 var parsed = JSON.parse(toParse);
                                 count = Object.keys(parsed).length;
@@ -50,25 +50,25 @@
                     }
                 };
                 
-                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }} = window.CodeMirror($refs.{{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}, config);
+                {{ $cmId }} = window.CodeMirror($refs.{{ $cmId }}, config);
 
-                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.setSize('100%', '100%');
-                {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.setValue({{ json_encode(json_encode($getState(), JSON_PRETTY_PRINT), JSON_UNESCAPED_SLASHES) }} ?? '{}');
+                {{ $cmId }}.setSize('100%', '100%');
+                {{ $cmId }}.setValue({{ json_encode(json_encode($getState(), JSON_PRETTY_PRINT), JSON_UNESCAPED_SLASHES) }} ?? '{}');
 
                 @php
                     if($getHasFoldedCode()) {
-                        echo preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) . ".foldCode(window.CodeMirror.Pos(0, 0));";
+                        echo "$cmId.foldCode(window.CodeMirror.Pos(0, 0));";
                     }
                 @endphp
 
                 setTimeout(function() {
-                        {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}.refresh();
+                        {{ $cmId }}.refresh();
                 }, 1);
             "
         >
             <div
                 wire:ignore
-                x-ref="{{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}"
+                x-ref="{{ $cmId }}"
             ></div>
         </div>
     </div>
