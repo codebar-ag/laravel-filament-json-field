@@ -14,7 +14,7 @@ Filament Json Field is a Laravel Filament JSON Field integration with CodeMirror
 
 | Package       | PHP              | Laravel        | Filament Forms | Filament Infolists | Filament Support |
 |-----------|------------------|---------------|----------------|--------------------|------------------|
-| v13.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^4.0           | ^4.0               | ^4.0            |
+| v13.0 (alpha)   | ^8.3, ^8.4 | ^13.0         | ^4.0           | ^4.0               | ^4.0            |
 | v12.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^3.3           | ^3.3               | ^3.3            |
 | v2.0      | ^8.1             | ^11.0         | ^3.2           | ^3.2               | ^3.2            |
 | v1.0      | ^8.1             | ^10.45, ^11.0 | ^3.2           | ^3.2               | ^3.2            |
