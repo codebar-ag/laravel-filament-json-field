@@ -15,6 +15,7 @@
             x-init="
                 const config = {
                     mode: {name: 'javascript', json: true},
+                    readOnly: {{ json_encode($isReadOnly()) }},
                     lineNumbers: {{ json_encode($getHasLineNumbers()) }},
                     lineWrapping: {{ json_encode($getHasLineWrapping()) }},
                     autoCloseBrackets: {{ json_encode($getHasAutoCloseBrackets()) }},
@@ -65,6 +66,7 @@
                         {{ $cmId }}.refresh();
                 }, 1);
 
+                @if(!$isReadOnly())
                 {{ $cmId }}.on('change', function () {
                     try {
                         state = JSON.parse({{ $cmId }}.getValue())
@@ -72,6 +74,7 @@
                         state = {{ $cmId }}.getValue();
                     }
                 });
+                @endif
             "
         >
             <div
