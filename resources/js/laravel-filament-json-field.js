@@ -1,11 +1,16 @@
 
-import CodeMirror from "codemirror/lib/codemirror";
+import CodeMirror from "codemirror";
 
-import "codemirror/src/codemirror.js";
-import "codemirror/src/modes";
+// Core CodeMirror
+import "codemirror/lib/codemirror.css";
 
+// Custom styles
+import "../css/laravel-filament-json-field.css";
+
+// Modes
 import "codemirror/mode/javascript/javascript";
 
+// Addons
 import "codemirror/addon/edit/closebrackets";
 import "codemirror/addon/edit/closetag";
 import "codemirror/addon/edit/continuelist";
@@ -13,6 +18,7 @@ import "codemirror/addon/edit/matchbrackets";
 import "codemirror/addon/edit/matchtags";
 import "codemirror/addon/edit/trailingspace";
 
+// Folding
 import "codemirror/addon/fold/brace-fold";
 import "codemirror/addon/fold/comment-fold";
 import "codemirror/addon/fold/foldcode";
@@ -22,7 +28,9 @@ import "codemirror/addon/fold/markdown-fold";
 import "codemirror/addon/fold/xml-fold";
 import "codemirror/addon/fold/foldgutter.css";
 
-// Dark Mode
-import "codemirror/theme/darcula.css";
+// Themes
+import "codemirror/theme/material.css";
+import "codemirror/theme/default.css";
 
+// Make CodeMirror available globally
 window.CodeMirror = CodeMirror;

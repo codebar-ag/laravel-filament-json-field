@@ -2,6 +2,7 @@
 
 namespace CodebarAg\FilamentJsonField;
 
+use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
@@ -20,6 +21,7 @@ class FilamentJsonFieldServiceProvider extends PackageServiceProvider
     {
         FilamentAsset::register([
             Js::make('laravel-filament-json-field', __DIR__.'/../dist/laravel-filament-json-field.js'),
+            Css::make('laravel-filament-json-field', __DIR__.'/../dist/laravel-filament-json-field.css'),
         ], 'laravel-filament-json-field');
     }
 }

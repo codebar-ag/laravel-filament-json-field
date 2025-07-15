@@ -36,4 +36,19 @@ class JsonInput extends Field
                 'array' => __('The :attribute must be valid JSON.'),
             ]);
     }
+
+    public function getGutters(): array
+    {
+        $gutters = [];
+        
+        if ($this->getHasLineNumbers()) {
+            $gutters[] = 'CodeMirror-linenumbers';
+        }
+        
+        if ($this->getHasFoldingCode()) {
+            $gutters[] = 'CodeMirror-foldgutter';
+        }
+        
+        return $gutters;
+    }
 }

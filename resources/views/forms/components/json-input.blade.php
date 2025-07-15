@@ -11,12 +11,12 @@
             wire:ignore
             x-init="
                 {{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }} = CodeMirror($refs.{{ preg_replace('/[^a-zA-Z0-9_]/', '_', $getId()) }}, {
-                    mode: 'application/json',
+                    mode: {name: 'javascript', json: true},
                     lineNumbers: {{ json_encode($getHasLineNumbers()) }},
                     lineWrapping: {{ json_encode($getHasLineWrapping()) }},
                     autoCloseBrackets: {{ json_encode($getHasAutoCloseBrackets()) }},
                     viewportMargin: Infinity,
-                    theme: '{{ $getHasDarkTheme() ? 'darcula' : 'default' }}',
+                    theme: '{{ $getHasDarkTheme() ? 'material' : 'default' }}',
                     foldGutter: {{ json_encode($getHasFoldingCode()) }},
                     @php
                         if($getHasFoldingCode()) {
