@@ -8,15 +8,16 @@
 
 ## 💡 What is Filament Json Field?
 
-Filament Json Field is a Filament wrapper for Codemirror.
+Filament Json Field is a Laravel Filament JSON Field integration with CodeMirror support, providing a powerful and feature-rich JSON editor for your Filament forms and infolists.
 
 ## 🛠 Requirements
 
-| Package 	 | PHP 	            | Laravel 	     | Filament Infolists | Filament Support | Filament Tables |
-|-----------|------------------|---------------|--------------------|------------------|-----------------|
-| v12.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^3.3               | ^3.3             | ^3.3            |
-| v2.0      | ^8.1             | ^11.0         | ^3.2               | ^3.2             | ^3.2            |
-| v1.0      | ^8.1             | ^10.45, ^11.0 | ^3.2               | ^3.2             | ^3.2            |
+| Package       | PHP              | Laravel        | Filament Forms | Filament Infolists | Filament Support |
+|-----------|------------------|---------------|----------------|--------------------|------------------|
+| v13.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^4.0           | ^4.0               | ^4.0            |
+| v12.0     | ^8.2, ^8.3, ^8.4 | ^12.0         | ^3.3           | ^3.3               | ^3.3            |
+| v2.0      | ^8.1             | ^11.0         | ^3.2           | ^3.2               | ^3.2            |
+| v1.0      | ^8.1             | ^10.45, ^11.0 | ^3.2           | ^3.2               | ^3.2            |
 
 
 ## ⚙️ Installation
@@ -31,7 +32,8 @@ php artisan filament:assets
 
 ## Usage
 
-Forms: 
+### Forms
+
 ```php
 use CodebarAg\FilamentJsonField\Forms\Components\JsonInput;
 
@@ -42,30 +44,31 @@ public function form(Form $form): Form
     return $form
         ->schema([
             JsonInput::make('json')
-                ->label('JSON')
+                ->label('JSON Data')
                 ->lineNumbers(true)
                 ->lineWrapping(true)
                 ->autoCloseBrackets(true)
                 ->darkTheme(true)
                 ->foldingCode(true)
-                ->foldedCode(true), // Folded code will fold the code on form load
+                ->foldedCode(true) // Folded code will fold the code on form load
+                ->readOnly(false), // Set to true to make the field read-only
         ]);
 }
-...
-````
+```
 
-Infolists:
+### Infolists
+
 ```php
 use CodebarAg\FilamentJsonField\Infolists\Components\JsonEntry;
 
 ...
 
-public function form(Form $form): Form
+public function infolist(Infolist $infolist): Infolist
 {
-    return $form
+    return $infolist
         ->schema([
             JsonEntry::make('json')
-                ->label('JSON')
+                ->label('JSON Data')
                 ->lineNumbers(true)
                 ->lineWrapping(true)
                 ->autoCloseBrackets(true)
@@ -74,19 +77,30 @@ public function form(Form $form): Form
                 ->foldedCode(true), // Folded code will fold the code on form load
         ]);
 }
-...
-````
+```
 
 ### Options
 
 The following options are currently supported:
 
-| Request 	           | Supported 	 |
-|---------------------|:-----------:|
-| Line Numbers        |      ✅      |
-| Auto Close Brackets |      ✅      |
-| Dark Theme          |      ✅      |
-| Folding Code        |      ✅      |
+| Option              | Supported | Description |
+|---------------------|:---------:|-------------|
+| Line Numbers        |     ✅     | Display line numbers in the editor |
+| Line Wrapping       |     ✅     | Enable line wrapping for long lines |
+| Auto Close Brackets |     ✅     | Automatically close brackets and quotes |
+| Dark Theme          |     ✅     | Enable dark theme styling |
+| Folding Code        |     ✅     | Enable code folding functionality |
+| Folded Code         |     ✅     | Start with code folded (forms only) |
+| Read Only           |     ✅     | Make the field read-only (forms only) |
+
+### Features
+
+- **CodeMirror Integration**: Powered by CodeMirror 5 for excellent JSON editing experience
+- **Syntax Highlighting**: Full JSON syntax highlighting with validation
+- **Error Handling**: Built-in JSON validation with user-friendly error messages
+- **Responsive Design**: Works seamlessly across different screen sizes
+- **Customizable**: Extensive configuration options for different use cases
+- **Filament 4.0 Ready**: Fully compatible with the latest Filament version
 
 ## 🚧 Testing
 

@@ -1,8 +1,7 @@
 
-import CodeMirror from "codemirror/lib/codemirror";
+import CodeMirror from "codemirror";
 
-import "codemirror/src/codemirror.js";
-import "codemirror/src/modes";
+import "codemirror/lib/codemirror.css";
 
 import "codemirror/mode/javascript/javascript";
 
@@ -22,7 +21,6 @@ import "codemirror/addon/fold/markdown-fold";
 import "codemirror/addon/fold/xml-fold";
 import "codemirror/addon/fold/foldgutter.css";
 
-// Dark Mode
-import "codemirror/theme/darcula.css";
+import "codemirror/theme/material.css";
 
 window.CodeMirror = CodeMirror;
