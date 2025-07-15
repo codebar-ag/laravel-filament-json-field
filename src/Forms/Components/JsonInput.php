@@ -40,15 +40,15 @@ class JsonInput extends Field
     public function getGutters(): array
     {
         $gutters = [];
-        
+
         if ($this->getHasLineNumbers()) {
             $gutters[] = 'CodeMirror-linenumbers';
         }
-        
+
         if ($this->getHasFoldingCode()) {
             $gutters[] = 'CodeMirror-foldgutter';
         }
-        
+
         return $gutters;
     }
 }
