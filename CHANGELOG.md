@@ -27,7 +27,7 @@ All notable changes to `filament-json-field` will be documented in this file.
 - Component rendering and behavior
 
 ### Technical
-- Updated PHP version support to 8.2.*, 8.3.*, 8.4.*
+- Updated PHP version support to 8.3.*, 8.4.*, 8.5.*
 - Enhanced test coverage and component testing
 - Improved build process and asset compilation
 
