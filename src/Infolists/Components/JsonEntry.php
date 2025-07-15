@@ -5,6 +5,7 @@ namespace CodebarAg\FilamentJsonField\Infolists\Components;
 use CodebarAg\FilamentJsonField\Concerns\HasAutoCloseBrackets;
 use CodebarAg\FilamentJsonField\Concerns\HasDarkTheme;
 use CodebarAg\FilamentJsonField\Concerns\HasFoldingCode;
+use CodebarAg\FilamentJsonField\Concerns\HasGutters;
 use CodebarAg\FilamentJsonField\Concerns\HasLineNumbers;
 use CodebarAg\FilamentJsonField\Concerns\HasLineWrapping;
 use Filament\Infolists\Components\Entry;
@@ -14,6 +15,7 @@ class JsonEntry extends Entry
     use HasAutoCloseBrackets;
     use HasDarkTheme;
     use HasFoldingCode;
+    use HasGutters;
     use HasLineNumbers;
     use HasLineWrapping;
 

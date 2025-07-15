@@ -4,9 +4,6 @@ import CodeMirror from "codemirror";
 // Core CodeMirror
 import "codemirror/lib/codemirror.css";
 
-// Custom styles
-import "../css/laravel-filament-json-field.css";
-
 // Modes
 import "codemirror/mode/javascript/javascript";
 
@@ -30,7 +27,6 @@ import "codemirror/addon/fold/foldgutter.css";
 
 // Themes
 import "codemirror/theme/material.css";
-import "codemirror/theme/default.css";
 
 // Make CodeMirror available globally
 window.CodeMirror = CodeMirror;

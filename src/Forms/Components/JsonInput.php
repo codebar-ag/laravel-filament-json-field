@@ -5,6 +5,7 @@ namespace CodebarAg\FilamentJsonField\Forms\Components;
 use CodebarAg\FilamentJsonField\Concerns\HasAutoCloseBrackets;
 use CodebarAg\FilamentJsonField\Concerns\HasDarkTheme;
 use CodebarAg\FilamentJsonField\Concerns\HasFoldingCode;
+use CodebarAg\FilamentJsonField\Concerns\HasGutters;
 use CodebarAg\FilamentJsonField\Concerns\HasLineNumbers;
 use CodebarAg\FilamentJsonField\Concerns\HasLineWrapping;
 use Filament\Forms\Components\Concerns\CanBeReadOnly;
@@ -16,6 +17,7 @@ class JsonInput extends Field
     use HasAutoCloseBrackets;
     use HasDarkTheme;
     use HasFoldingCode;
+    use HasGutters;
     use HasLineNumbers;
     use HasLineWrapping;
 
@@ -35,20 +37,5 @@ class JsonInput extends Field
             ->validationMessages([
                 'array' => __('The :attribute must be valid JSON.'),
             ]);
-    }
-
-    public function getGutters(): array
-    {
-        $gutters = [];
-
-        if ($this->getHasLineNumbers()) {
-            $gutters[] = 'CodeMirror-linenumbers';
-        }
-
-        if ($this->getHasFoldingCode()) {
-            $gutters[] = 'CodeMirror-foldgutter';
-        }
-
-        return $gutters;
     }
 }
