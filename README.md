@@ -25,7 +25,7 @@ Filament Json Field is a Laravel Filament JSON Field integration with CodeMirror
 You can install the package via composer:
 
 ```bash
-composer require codebar-ag/filament-json-field
+composer require codebar-ag/laravel-filament-json-field
 php artisan filament:assets
 ```
 
