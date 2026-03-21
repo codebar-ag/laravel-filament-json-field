@@ -14,7 +14,8 @@ class FilamentJsonFieldServiceProvider extends PackageServiceProvider
     {
         $package
             ->name('laravel-filament-json-field')
-            ->hasViews();
+            ->hasViews()
+            ->hasAssets();
     }
 
     public function packageBooted(): void
