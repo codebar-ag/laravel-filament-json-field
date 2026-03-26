@@ -1,0 +1,38 @@
+name: npm audit
+
+on:
+  push:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'npm-shrinkwrap.json'
+  pull_request:
+    paths:
+      - 'package.json'
+      - 'package-lock.json'
+      - 'npm-shrinkwrap.json'
+  schedule:
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  npm-audit:
+    name: npm audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6.0.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 'lts/*'
+
+      - name: Install and audit
+        run: |
+          npm install
+          npm audit --audit-level=moderate
