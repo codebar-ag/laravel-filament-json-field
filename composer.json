@@ -17,7 +17,7 @@
         }
     ],
     "require": {
-        "php": "8.2.*|8.3.*|8.4.*",
+        "php": "8.3.*|8.4.*|8.5.*",
         "filament/forms": "^4.0|^5.3",
         "filament/infolists": "^4.0|^5.3",
         "filament/support": "^5.4",
@@ -29,7 +29,7 @@
         "laravel/pint": "^1.21",
         "larastan/larastan": "^v3.1",
         "orchestra/testbench": "^10.0|^11.0",
-        "pestphp/pest": "^3.7|^4.4",
+        "pestphp/pest": "^3.7|^4.4|^5.0",
         "phpstan/extension-installer": "^1.4",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
@@ -51,7 +51,7 @@
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
         "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
+        "test-coverage": "vendor/bin/pest --coverage --coverage-html build/coverage --coverage-text=build/coverage.txt --coverage-clover build/logs/clover.xml",
         "format": "vendor/bin/pint",
         "clear": "@php vendor/bin/testbench package:purge-laravel-filament-revealable-field --ansi"
     },

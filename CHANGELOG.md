@@ -4,6 +4,9 @@ All notable changes to `filament-json-field` will be documented in this file.
 
 ## [Unreleased]
 
+### Removed
+- PHP 8.2 support: `composer.json` now requires PHP 8.3, 8.4 or 8.5 (the CI matrix never covered 8.2).
+
 ## [13.0.0] - 2025-01-15
 
 ### Added
